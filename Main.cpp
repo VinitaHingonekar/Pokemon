@@ -1,7 +1,6 @@
 #include "PokemonType.hpp"
 #include "PokemonChoice.hpp"
 #include "Utility.hpp"
-#include "Player.hpp"
 #include <iostream>
 #include <limits>
 #include <string>
@@ -49,6 +48,8 @@ public:
         cout << "Attacks with a powerful move!" << endl;
     }
 };
+
+#include "Player.hpp"
 
 class ProfessorOak
 {

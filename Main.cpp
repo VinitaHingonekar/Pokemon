@@ -1,6 +1,7 @@
 #include "PokemonType.hpp"
 #include "PokemonChoice.hpp"
 #include "Utility.hpp"
+#include "Player.hpp"
 #include <iostream>
 #include <limits>
 #include <string>
@@ -46,54 +47,6 @@ public:
     void attack()
     {
         cout << "Attacks with a powerful move!" << endl;
-    }
-};
-
-class Player
-{
-public:
-    string name;
-    Pokemon chosenPokemon;
-
-    // Default Constructor
-    Player()
-    {
-        name = "Trainer";
-        chosenPokemon = Pokemon();
-    }
-
-    // Parameterized Constructor
-    Player(string p_name, Pokemon p_chosenPokemon)
-    {
-        name = p_name;
-        chosenPokemon = p_chosenPokemon;
-    }
-
-    // Copy Constructor 
-    Player(const Player &other)
-    {
-        name = other.name;
-        chosenPokemon = other.chosenPokemon;
-    }
-
-    void ChoosePokemon(int choice) {
-        switch ((PokemonChoice)choice) 
-        { 
-            case PokemonChoice::CHARMANDER:
-                chosenPokemon = Pokemon("Charmander", PokemonType::FIRE, 100); 
-                break; 
-            case PokemonChoice::BULBASAUR: 
-                chosenPokemon = Pokemon("Bulbasaur", PokemonType::GRASS, 100); 
-                break; 
-            case PokemonChoice::SQUIRTLE: 
-                chosenPokemon = Pokemon("Squirtle", PokemonType::WATER, 100); 
-                break; 
-            default: 
-                chosenPokemon = Pokemon("Pikachu", PokemonType::ELECTRIC, 100); 
-                break; 
-        }
-
-        cout << "Player " << name << " chose " << chosenPokemon.name << "!" << endl;
     }
 };
 

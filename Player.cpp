@@ -18,13 +18,6 @@ Player::Player(string p_name, Pokemon p_chosenPokemon)
     chosenPokemon = p_chosenPokemon;
 }
 
-// Copy Constructor 
-Player::Player(const Player &other)
-{
-    name = other.name;
-    chosenPokemon = other.chosenPokemon;
-}
-
 void Player::ChoosePokemon(int choice) {
     switch ((PokemonChoice)choice) 
     { 

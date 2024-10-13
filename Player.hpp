@@ -1,4 +1,5 @@
 #include <string>
+#include "Pokemon.hpp"
 using namespace std;
 
 class Player 
@@ -11,8 +12,6 @@ class Player
     Player();
     // Parameterized Constructor
     Player(string p_name, Pokemon p_chosenPokemon);
-    // Copy Constructor 
-    Player(const Player &other);
-    
+
     void ChoosePokemon(int choice);
 };

@@ -1,6 +1,3 @@
-#include "PokemonType.hpp"
-#include "PokemonChoice.hpp"
-#include "Utility.hpp"
 #include <string>
 using namespace std;
 
@@ -16,5 +13,6 @@ class Player
     Player(string p_name, Pokemon p_chosenPokemon);
     // Copy Constructor 
     Player(const Player &other);
+    
     void ChoosePokemon(int choice);
 };

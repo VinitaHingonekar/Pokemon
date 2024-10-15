@@ -1,5 +1,4 @@
 #include "Player.hpp"
-// #include "Pokemon.hpp"
 #include "PokemonChoice.hpp"
 #include "PokemonType.hpp"
 #include "Utility.hpp"
@@ -7,10 +6,6 @@
 #include <limits>
 #include <string>
 using namespace std;
-
-class Player;
-class Pokemon;
-enum PokemonType;
 
 class ProfessorOak
 {

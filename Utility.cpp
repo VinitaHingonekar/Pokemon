@@ -3,7 +3,7 @@
 #include <limits>
 using namespace std;
 
-void Utility :: ClearConsole() {
+void Utility::ClearConsole() {
 #ifdef _WIN32
     system("cls");
 #else

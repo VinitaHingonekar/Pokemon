@@ -1,8 +1,8 @@
 enum class PokemonType
 {
     FIRE,
+    GRASS,
     WATER,
     ELECTRIC,
-    GRASS,
     NORMAL
 };

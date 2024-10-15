@@ -1,6 +1,9 @@
 #include "Pokemon.hpp"
+#include "PokemonType.hpp"
 #include <iostream>
 using namespace std;
+
+enum class PokemonType;
 
 // Default Constructor
  Pokemon::Pokemon()

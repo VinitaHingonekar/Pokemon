@@ -1,8 +1,11 @@
 #include "Player.hpp"
-#include "PokemonType.hpp"
 #include "PokemonChoice.hpp"
+#include "PokemonType.hpp"
 #include "Utility.hpp"
 #include <iostream>
+using namespace std;
+
+class Pokemon;
 
 // Default Constructor
 Player::Player()
@@ -36,4 +39,5 @@ void Player::ChoosePokemon(int choice) {
     }
 
     cout << "Player " << name << " chose " << chosenPokemon.name << "!" << endl;
+    Utility::WaitForEnter();
 }

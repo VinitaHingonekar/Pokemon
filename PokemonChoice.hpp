@@ -3,5 +3,5 @@ enum class PokemonChoice
     CHARMANDER = 1,
     BULBASAUR,
     SQUIRTLE,
-    InvalidChoice
+    PIKACHU
 };

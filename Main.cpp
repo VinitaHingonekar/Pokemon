@@ -1,55 +1,16 @@
-#include "PokemonType.hpp"
+#include "Player.hpp"
+// #include "Pokemon.hpp"
 #include "PokemonChoice.hpp"
+#include "PokemonType.hpp"
 #include "Utility.hpp"
 #include <iostream>
 #include <limits>
 #include <string>
 using namespace std;
 
-class Pokemon
-{
-public:
-    string name;
-    PokemonType type;
-    int health;
-
-    // Default Constructor
-    Pokemon()
-    {
-        name = "Unknown";
-        type = PokemonType::NORMAL;
-        health = 50;
-    };
-
-    // Parameterized Constructor
-    Pokemon(string p_name, PokemonType p_type, int p_health)
-    {
-        name = p_name;
-        type = p_type;
-        health = p_health;
-    }
-
-    // Copy Constructor 
-    Pokemon(const Pokemon &other)
-    {
-        name = other.name;
-        type = other.type;
-        health = other.health;
-    }
-
-    // Destructor
-    ~Pokemon() 
-    {
-
-    }
-
-    void attack()
-    {
-        cout << "Attacks with a powerful move!" << endl;
-    }
-};
-
-#include "Player.hpp"
+class Player;
+class Pokemon;
+enum PokemonType;
 
 class ProfessorOak
 {

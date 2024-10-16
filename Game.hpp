@@ -8,4 +8,5 @@ private:
 public:
     Game();
     void GameLoop(Player &player);
+    void Battle(Pokemon &pokemon, Pokemon &wildPokemon);
 };

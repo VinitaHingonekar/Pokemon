@@ -37,7 +37,7 @@ Pokemon::~Pokemon()
 
 void Pokemon::Attack(Pokemon &target)
 {
-    int damage = 10;
+    int damage = attackPower;
     cout << name<< " attacks " << target.name << " for " << damage << " damage!" << endl;
     target.TakeDamage(damage);
 }
@@ -56,26 +56,7 @@ bool Pokemon::isFainted()
     return health <= 0;
 }
 
-void Pokemon::Battle(Pokemon &pokemon, Pokemon &wildPokemon)
+void Pokemon::Heal()
 {
-    cout << "A wild " << wildPokemon.name << " appeared!" << endl;
-
-    while(!pokemon.isFainted() && !wildPokemon.isFainted())
-    {
-        pokemon.Attack(wildPokemon);
-
-        if(!wildPokemon.isFainted())
-        {
-            wildPokemon.Attack(pokemon);
-        }
-    }
-
-    if(pokemon.isFainted())
-    {
-        cout << pokemon.name << " has fainted! You lose the battle.\\n";
-    } 
-    else 
-    {
-        cout << "You defeated the wild " << wildPokemon.name << "!\\n";
-    }
+    health = maxHealth;
 }

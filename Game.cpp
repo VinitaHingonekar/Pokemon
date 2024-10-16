@@ -45,7 +45,9 @@ void Game::GameLoop(Player &player)
             cout << "A wild " << encounteredPokemon.name << " appeared!\n";
             break;
         case 2:
-            cout <<  "You head to the PokeCenter, but Nurse Joy is out on a coffee break. Guess your Pokemon will have to tough it out for now!\n";;
+            cout << "You head to the PokeCenter" << endl;
+            player.chosenPokemon.Heal();
+            cout << player.chosenPokemon.name << "'s health is fully restored!\n";
             break;
         case 3:
             cout << "You march up to the Gym, but it's closed for renovations. Seems like even Gym Leaders need a break!\n";
@@ -70,4 +72,28 @@ void Game::GameLoop(Player &player)
         Utility::WaitForEnter();
     }
     cout << "Goodbye, " << player.name << "! Thanks for playing!\n";
+}
+
+void Game::Battle(Pokemon &pokemon, Pokemon &wildPokemon)
+{
+    cout << "A wild " << wildPokemon.name << " appeared!" << endl;
+
+    while(!pokemon.isFainted() && !wildPokemon.isFainted())
+    {
+        pokemon.Attack(wildPokemon);
+
+        if(!wildPokemon.isFainted())
+        {
+            wildPokemon.Attack(pokemon);
+        }
+    }
+
+    if(pokemon.isFainted())
+    {
+        cout << pokemon.name << " has fainted! You lose the battle.\\n";
+    } 
+    else 
+    {
+        cout << "You defeated the wild " << wildPokemon.name << "!\\n";
+    }
 }

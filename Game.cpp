@@ -4,6 +4,7 @@
 #include "Utility.hpp"
 #include "WildEncounterManager.hpp"
 #include "Grass.hpp"
+#include "BattleManager.hpp"
 #include <iostream>
 using namespace std;
 
@@ -23,6 +24,7 @@ void Game::GameLoop(Player &player)
 
     while(keepPlaying)
     {
+        BattleManager battleManager;
         Utility::ClearConsole();
 
         cout << "What would you like to do next, " << player.name << "?" << endl;
@@ -43,6 +45,7 @@ void Game::GameLoop(Player &player)
             WildEncounterManager encounterManager;
             encounteredPokemon = encounterManager.GetRandomPokemonFromGrass(forestGrass);
             cout << "A wild " << encounteredPokemon.name << " appeared!\n";
+            battleManager.StartBattle(player, encounteredPokemon);
             break;
         case 2:
             cout << "You head to the PokeCenter" << endl;
@@ -72,28 +75,4 @@ void Game::GameLoop(Player &player)
         Utility::WaitForEnter();
     }
     cout << "Goodbye, " << player.name << "! Thanks for playing!\n";
-}
-
-void Game::Battle(Pokemon &pokemon, Pokemon &wildPokemon)
-{
-    cout << "A wild " << wildPokemon.name << " appeared!" << endl;
-
-    while(!pokemon.isFainted() && !wildPokemon.isFainted())
-    {
-        pokemon.Attack(wildPokemon);
-
-        if(!wildPokemon.isFainted())
-        {
-            wildPokemon.Attack(pokemon);
-        }
-    }
-
-    if(pokemon.isFainted())
-    {
-        cout << pokemon.name << " has fainted! You lose the battle.\\n";
-    } 
-    else 
-    {
-        cout << "You defeated the wild " << wildPokemon.name << "!\\n";
-    }
 }

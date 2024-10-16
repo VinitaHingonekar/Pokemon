@@ -1,8 +1,9 @@
-#include "grass.hpp"
 #include "Game.hpp"
-#include "Utility.hpp"
 #include "Player.hpp"
+#include "PokemonType.hpp"
+#include "Utility.hpp"
 #include "WildEncounterManager.hpp"
+#include "Grass.hpp"
 #include <iostream>
 using namespace std;
 
@@ -15,7 +16,7 @@ forestGrass = {"Forest",
                 70}; 
  }
 
- void Game::GameLoop(Player &player)
+void Game::GameLoop(Player &player)
 {
     bool keepPlaying = true;
     int choice;
@@ -34,12 +35,13 @@ forestGrass = {"Forest",
         cout << "Enter your choice : " ;
         cin >> choice;
 
+        Pokemon encounteredPokemon;
+
         switch (choice)
         {
         case 1:
-            cout << "You look around... but all the wild Pokemon are on vacation. Maybe try again later?\n";
             WildEncounterManager encounterManager;
-            Pokemon encounteredPokemon = encounterManager.getRandomPokemonFromGrass(forestGrass);
+            encounteredPokemon = encounterManager.GetRandomPokemonFromGrass(forestGrass);
             cout << "A wild " << encounteredPokemon.name << " appeared!\n";
             break;
         case 2:

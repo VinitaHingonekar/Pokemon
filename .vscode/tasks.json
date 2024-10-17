@@ -8,7 +8,7 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${workspaceFolder}\\*.cpp",
-                "${workspaceFolder}\\*.hpp",
+                // "${workspaceFolder}\\*.hpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
@@ -29,7 +29,7 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${workspaceFolder}\\*.cpp",
-                "${workspaceFolder}\\*.hpp",
+                // "${workspaceFolder}\\*.hpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],

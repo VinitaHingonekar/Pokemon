@@ -4,12 +4,19 @@
 #include <cstdlib>
 #include <ctime>
 
-WildEncounterManager::WildEncounterManager() {
-    srand(time(0));
-}
+using namespace N_Pokemon;
 
-Pokemon WildEncounterManager::GetRandomPokemonFromGrass(const Grass &grass)
-{
-    int randomIndex = rand() % grass.wildPokemonList.size();
-    return grass.wildPokemonList[randomIndex];
+namespace N_Battle {
+
+    void WildEncounterManager() 
+    {
+        srand(time(0));
+    }
+
+    N_Pokemon::Pokemon GetRandomPokemonFromGrass(const N_Pokemon::Grass &grass)
+    {
+        int randomIndex = rand() % grass.wildPokemonList.size();
+        return grass.wildPokemonList[randomIndex];
+    }
+    
 }

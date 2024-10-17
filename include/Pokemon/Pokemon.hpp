@@ -4,29 +4,33 @@ using namespace std;
 
 enum class PokemonType;
 
-class Pokemon
-{
-public:
-    string name;
-    PokemonType type;
-    int health;
-    int maxHealth = 100;
-    int attackPower;
+namespace N_Pokemon{
 
-    // Default Constructor
-    Pokemon();
+    class Pokemon
+    {
+    public:
+        string name;
+        PokemonType type;
+        int health;
+        int maxHealth = 100;
+        int attackPower;
 
-    // Parameterized Constructor
-    Pokemon(string p_name, PokemonType p_type, int p_health, int p_attackPower);
+        // Default Constructor
+        Pokemon();
 
-    // Copy Constructor 
-    Pokemon(const Pokemon &other);
+        // Parameterized Constructor
+        Pokemon(string p_name, PokemonType p_type, int p_health, int p_attackPower);
 
-    // Destructor
-    ~Pokemon();
+        // Copy Constructor 
+        Pokemon(const Pokemon &other);
 
-    void Attack(Pokemon &target);
-    void TakeDamage(int damage);
-    bool isFainted();
-    void Heal();
-};
+        // Destructor
+        ~Pokemon();
+
+        void Attack(Pokemon &target);
+        void TakeDamage(int damage);
+        bool isFainted();
+        void Heal();
+    };
+    
+}

@@ -5,40 +5,45 @@
 #include "../../include/Utility/Utility.hpp"
 #include <iostream>
 using namespace std;
+using namespace N_Utility;
 
 class Pokemon;
 
-// Default Constructor
-Player::Player()
-{
-    name = "Trainer";
-    chosenPokemon = Pokemon();
-}
+namespace N_Player{
 
-// Parameterized Constructor
-Player::Player(string p_name, Pokemon p_chosenPokemon)
-{
-    name = p_name;
-    chosenPokemon = p_chosenPokemon;
-}
-
-void Player::ChoosePokemon(int choice) {
-    switch ((PokemonChoice)choice) 
-    { 
-        case PokemonChoice::CHARMANDER:
-            chosenPokemon = Pokemon("Charmander", PokemonType::FIRE, 100, 10); 
-            break; 
-        case PokemonChoice::BULBASAUR: 
-            chosenPokemon = Pokemon("Bulbasaur", PokemonType::GRASS, 100, 8); 
-            break; 
-        case PokemonChoice::SQUIRTLE: 
-            chosenPokemon = Pokemon("Squirtle", PokemonType::WATER, 100, 9); 
-            break; 
-        default: 
-            chosenPokemon = Pokemon("Pikachu", PokemonType::ELECTRIC, 100, 12); 
-            break; 
+    // Default Constructor
+    Player::Player()
+    {
+        name = "Trainer";
+        chosenPokemon = Pokemon();
     }
 
-    cout << "Player " << name << " chose " << chosenPokemon.name << "!" << endl;
-    Utility::WaitForEnter();
+    // Parameterized Constructor
+    Player::Player(string p_name, Pokemon p_chosenPokemon)
+    {
+        name = p_name;
+        chosenPokemon = p_chosenPokemon;
+    }
+
+    void Player::ChoosePokemon(int choice) {
+        switch ((PokemonChoice)choice) 
+        { 
+            case PokemonChoice::CHARMANDER:
+                chosenPokemon = Pokemon("Charmander", PokemonType::FIRE, 100, 10); 
+                break; 
+            case PokemonChoice::BULBASAUR: 
+                chosenPokemon = Pokemon("Bulbasaur", PokemonType::GRASS, 100, 8); 
+                break; 
+            case PokemonChoice::SQUIRTLE: 
+                chosenPokemon = Pokemon("Squirtle", PokemonType::WATER, 100, 9); 
+                break; 
+            default: 
+                chosenPokemon = Pokemon("Pikachu", PokemonType::ELECTRIC, 100, 12); 
+                break; 
+        }
+
+        cout << "Player " << name << " chose " << chosenPokemon.name << "!" << endl;
+        Utility::WaitForEnter();
+    }
+    
 }

@@ -1,15 +1,20 @@
 #include <iostream>
 using namespace std;
+// using namespace N_Player;
 
 class Player;
 
-class ProfessorOak
-{
-public:
-    string name;
+namespace N_Character{
 
-    ProfessorOak(string p_name);
-    void GreetPlayer(Player &player);   
-    void OfferPokemonChoices(Player &player);
-    void ExplainMainQuest(Player &player);
-};
+    class ProfessorOak
+    {
+    public:
+        string name;
+
+        ProfessorOak(string p_name);
+        void GreetPlayer(N_Player::Player &player);   
+        void OfferPokemonChoices(N_Player::Player &player);
+        void ExplainMainQuest(N_Player::Player &player);
+    };
+
+}

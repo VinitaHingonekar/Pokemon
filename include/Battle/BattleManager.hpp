@@ -1,3 +1,4 @@
+#pragma once
 #include "BattleState.hpp"
 
 class Player;

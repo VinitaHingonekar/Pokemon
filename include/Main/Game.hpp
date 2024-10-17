@@ -1,3 +1,4 @@
+#pragma once
 #include "Grass.hpp"
 
 class Player;
@@ -8,4 +9,5 @@ private:
 public:
     Game();
     void GameLoop(Player &player);
+    void VisitPokeCenter(Player &player);
 };

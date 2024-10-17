@@ -1,6 +1,6 @@
-#include "ProfessorOak.hpp"
-#include "Utility.hpp"
-#include "Player.hpp"
+#include "../../include/Character/ProfessorOak.hpp"
+#include "../../include/Utility/Utility.hpp"
+#include "../../include/Character/Player/Player.hpp"
 #include <iostream>
 using namespace std;
 
@@ -75,4 +75,5 @@ void ProfessorOak::ExplainMainQuest(Player &player)
     cout << "Professor Oak: That’s the spirit! Now, your journey begins." << endl;
     Utility::WaitForEnter();
     cout << "Professor Oak: But first... let's just pretend I didn't forget to set up the actual game loop... Ahem, onwards! "  << endl;
+    Utility::WaitForEnter();
 }

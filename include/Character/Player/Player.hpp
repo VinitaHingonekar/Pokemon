@@ -1,12 +1,13 @@
+#pragma once
 #include <string>
-#include "Pokemon.hpp"
+#include "../../Pokemon/Pokemon.hpp"
 using namespace std;
 
 // class Pokemon;
 
 class Player 
 {
-    public:
+public:
     string name;
     Pokemon chosenPokemon;
 

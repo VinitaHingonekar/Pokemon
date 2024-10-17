@@ -17,7 +17,7 @@ public:
     Pokemon();
 
     // Parameterized Constructor
-    Pokemon(string p_name, PokemonType p_type, int p_health);
+    Pokemon(string p_name, PokemonType p_type, int p_health, int p_attackPower);
 
     // Copy Constructor 
     Pokemon(const Pokemon &other);

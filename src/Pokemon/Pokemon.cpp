@@ -2,11 +2,13 @@
 #include "../../include/Pokemon/Pokemon.hpp"
 #include "../../include/Pokemon/PokemonType.hpp"
 #include <iostream>
-using namespace std;
 
 enum class PokemonType;
+
 namespace N_Pokemon {
 
+    using namespace std;
+    
     // Default Constructor
     Pokemon::Pokemon()
     {

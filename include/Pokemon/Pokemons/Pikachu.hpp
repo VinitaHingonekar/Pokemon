@@ -11,6 +11,8 @@ namespace N_Pokemon{
             int thunderShockDamage;
         public:
             Pikachu();
+
+        private:
             void ThunderShock(Pokemon &target);
         };
 

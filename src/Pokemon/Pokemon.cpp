@@ -45,6 +45,39 @@ namespace N_Pokemon {
 
     }
 
+    int GetHealth()
+    {
+        return Pokemon::health;
+    }
+
+    void SetHealth(int _health)
+    {
+        Pokemon::health = _health
+    }
+
+
+    int GetMaxHealth()
+    {
+        return Pokemon::maxHealth;
+    }
+
+    void SetMaxHealth(int _maxHealth)
+    {
+        Pokemon::maxHealth = _maxHealth
+    }
+
+
+    int GetAttackPower()
+    {
+        return Pokemon::attackPower;
+    }
+
+    void SetAttackPower(int _attackPower)
+    {
+        Pokemon::attackPower = _attackPower;
+    }
+
+
     void Pokemon::Attack(Pokemon &target)
     {
         cout << name<< " attacks " << target.name << " for " << attackPower << " damage!" << endl;

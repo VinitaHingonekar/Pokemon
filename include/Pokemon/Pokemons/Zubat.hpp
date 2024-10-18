@@ -9,6 +9,8 @@ namespace N_Pokemon{
         class Zubat : public Pokemon{
         public:
             Zubat();
+
+        private:
             void Supersonic(Pokemon &target);
         };
 

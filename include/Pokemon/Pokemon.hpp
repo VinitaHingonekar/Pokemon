@@ -8,12 +8,14 @@ namespace N_Pokemon{
 
     class Pokemon
     {
-    public:
+    protected:
         string name;
         PokemonType type;
         int health;
         int maxHealth = 100;
         int attackPower;
+
+    public:
 
         // Default Constructor
         Pokemon();
@@ -26,6 +28,15 @@ namespace N_Pokemon{
 
         // Destructor
         ~Pokemon();
+
+        int GetHealth();
+        void SetHealth(int _health);
+
+        int GetMaxHealth();
+        void SetMaxHealth(int _maxHealth);
+
+        int GetAttackPower();
+        void SetAttackPower(int _attackPower);
 
         void Attack(Pokemon &target);
         void TakeDamage(int damage);

@@ -1,14 +1,13 @@
-#include "../../include/Character/Player/Player.hpp"
 #include "../../include/Character/ProfessorOak.hpp"
+#include "../../include/Character/Player/Player.hpp"
 #include "../../include/Utility/Utility.hpp"
 #include <iostream>
-using namespace std;
-using namespace N_Utility;
-// using namespace N_Player;
-using namespace N_Character;
 
 namespace N_Character{
-
+    using namespace std;
+    using namespace N_Utility;
+    using namespace N_Player;
+    
     ProfessorOak::ProfessorOak(string p_name) {
         name = p_name;
     }

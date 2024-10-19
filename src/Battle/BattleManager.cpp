@@ -1,18 +1,17 @@
-#pragma once
 #include "../../include/Battle/BattleManager.hpp"
 #include "../../include/Character/Player/Player.hpp"
-// #include "../../include/Pokemon/Pokemon.hpp"
 #include "../../include/Utility/Utility.hpp"
 #include <iostream>
-using namespace std;
-using namespace N_Player;
-using namespace N_Utility;
+// #include "../../include/Pokemon/Pokemon.hpp"
+
 // using namespace N_Pokemon;
 class Pokemon;
 
 namespace N_Battle{
-        
-    void BattleManager::StartBattle(Player &player, Pokemon &wildPokemon)
+    using namespace std;
+    using namespace N_Utility;
+    
+    void BattleManager::StartBattle(Player &player, N_Pokemon::Pokemon &wildPokemon)
     {
         battleState.playerPokemon = player.chosenPokemon;
         battleState.wildPokemon = wildPokemon;

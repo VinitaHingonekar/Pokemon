@@ -1,9 +1,6 @@
-#pragma once
 #include "../../include/Pokemon/Pokemon.hpp"
 #include "../../include/Pokemon/PokemonType.hpp"
 #include <iostream>
-
-enum class PokemonType;
 
 namespace N_Pokemon {
 
@@ -45,37 +42,47 @@ namespace N_Pokemon {
 
     }
 
-    int GetHealth()
-    {
-        return Pokemon::health;
-    }
+    // string GetName()
+    // {
+    //     return Pokemon::name;
+    // }
 
-    void SetHealth(int _health)
-    {
-        Pokemon::health = _health
-    }
+    // void SetName(int _name)
+    // {
+    //     Pokemon::name = _name;
+    // }
+
+    // int GetHealth()
+    // {
+    //     return Pokemon::health;
+    // }
+
+    // void SetHealth(int _health)
+    // {
+    //     Pokemon::health = _health
+    // }
 
 
-    int GetMaxHealth()
-    {
-        return Pokemon::maxHealth;
-    }
+    // int GetMaxHealth()
+    // {
+    //     return Pokemon::maxHealth;
+    // }
 
-    void SetMaxHealth(int _maxHealth)
-    {
-        Pokemon::maxHealth = _maxHealth
-    }
+    // void SetMaxHealth(int _maxHealth)
+    // {
+    //     Pokemon::maxHealth = _maxHealth
+    // }
 
 
-    int GetAttackPower()
-    {
-        return Pokemon::attackPower;
-    }
+    // int GetAttackPower()
+    // {
+    //     return Pokemon::attackPower;
+    // }
 
-    void SetAttackPower(int _attackPower)
-    {
-        Pokemon::attackPower = _attackPower;
-    }
+    // void SetAttackPower(int _attackPower)
+    // {
+    //     Pokemon::attackPower = _attackPower;
+    // }
 
 
     void Pokemon::Attack(Pokemon &target)

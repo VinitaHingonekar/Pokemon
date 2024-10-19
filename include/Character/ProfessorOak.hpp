@@ -1,11 +1,13 @@
 #include <iostream>
 using namespace std;
-// using namespace N_Player;
+#include "Player/Player.hpp"
 
 class Player;
 
 namespace N_Character{
-
+    using namespace std;
+    using namespace N_Player;
+    
     class ProfessorOak
     {
     public:

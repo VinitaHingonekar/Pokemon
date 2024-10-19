@@ -1,14 +1,20 @@
 #include <vector>
 
-namespace N_Battle{
+#include "../Pokemon/Pokemon.hpp"
 
-   struct Grass;
-   class Pokemon;
+namespace N_Pokemon
+{
+    struct Grass;
+    class Pokemon;
+}
+
+namespace N_Battle{
+   using namespace N_Pokemon;
 
    class WildEncounterManager { 
       public: 
-      WildEncounterManager();
-      Pokemon GetRandomPokemonFromGrass(const Grass& grass); 
+         WildEncounterManager();
+         N_Pokemon::Pokemon GetRandomPokemonFromGrass(const Grass& grass); 
    };
 
 }

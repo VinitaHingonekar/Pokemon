@@ -3,6 +3,7 @@
         "ostream": "cpp",
         "iostream": "cpp",
         "typeinfo": "cpp",
+        "string": "cpp",
         "array": "cpp",
         "atomic": "cpp",
         "*.tcc": "cpp",
@@ -14,7 +15,6 @@
         "cstdint": "cpp",
         "cstdio": "cpp",
         "cstdlib": "cpp",
-        "ctime": "cpp",
         "cwchar": "cpp",
         "cwctype": "cpp",
         "deque": "cpp",
@@ -28,7 +28,6 @@
         "memory_resource": "cpp",
         "numeric": "cpp",
         "random": "cpp",
-        "string": "cpp",
         "system_error": "cpp",
         "tuple": "cpp",
         "type_traits": "cpp",
@@ -41,7 +40,6 @@
         "new": "cpp",
         "sstream": "cpp",
         "stdexcept": "cpp",
-        "streambuf": "cpp",
-        "optional": "cpp"
+        "streambuf": "cpp"
     }
 }

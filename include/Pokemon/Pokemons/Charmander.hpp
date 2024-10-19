@@ -6,12 +6,12 @@ namespace N_Pokemon{
 
     namespace N_Pokemons{
         
-        class Pikachu : public Pokemon{
+        class Charmander : public Pokemon{
         public:
-            Pikachu();
+            Charmander();
 
         private:
-            void ThunderShock(Pokemon &target);
+            void FlameThrower(Pokemon &target);
         };
 
     }

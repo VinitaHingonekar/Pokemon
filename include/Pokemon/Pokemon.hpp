@@ -2,17 +2,17 @@
 #include <string>
 using namespace std;
 
-enum class PokemonType;
 
 namespace N_Pokemon{
+    enum class PokemonType;
 
     class Pokemon
     {
-    protected:
+    public:
         string name;
         PokemonType type;
         int health;
-        int maxHealth = 100;
+        int maxHealth;
         int attackPower;
 
     public:
@@ -28,6 +28,9 @@ namespace N_Pokemon{
 
         // Destructor
         ~Pokemon();
+
+        int GetName();
+        void SetName(int _name);
 
         int GetHealth();
         void SetHealth(int _health);

@@ -11,13 +11,13 @@ int main()
     N_Character::ProfessorOak *professor = new N_Character::ProfessorOak("Professor Oak");
     N_Player::Player *player = new N_Player::Player;
 
-    professor->GreetPlayer(*player);
-    professor->OfferPokemonChoices(*player);
+    professor->GreetPlayer(player);
+    professor->OfferPokemonChoices(player);
 
-    professor->ExplainMainQuest(*player);
+    professor->ExplainMainQuest(player);
 
     N_Main::Game *game = new N_Main::Game;
-    game->GameLoop(*player);
+    game->GameLoop(player);
 
     delete(professor);
     delete(player);

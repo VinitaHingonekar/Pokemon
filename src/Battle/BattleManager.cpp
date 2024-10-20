@@ -11,9 +11,9 @@ namespace N_Battle{
     using namespace std;
     using namespace N_Utility;
     
-    void BattleManager::StartBattle(Player &player, N_Pokemon::Pokemon &wildPokemon)
+    void BattleManager::StartBattle(Player *player, N_Pokemon::Pokemon &wildPokemon)
     {
-        battleState.playerPokemon = player.chosenPokemon;
+        battleState.playerPokemon = player->chosenPokemon;
         battleState.wildPokemon = wildPokemon;
         battleState.playerTurn = true;  // Player starts first
         battleState.battleOngoing = true;

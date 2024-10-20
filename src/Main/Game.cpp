@@ -21,7 +21,7 @@ namespace N_Main
         forestGrass = {"Forest", {Pidgey(), Caterpie(), Zubat()}, 70};
     }
 
-    void Game::GameLoop(Player &player) {
+    void Game::GameLoop(Player *player) {
 
         int choice;
         bool keepPlaying = true;
@@ -34,7 +34,7 @@ namespace N_Main
         Utility::ClearConsole();
 
         // Display options to the player
-        cout << "\nWhat would you like to do next, " << player.name << "?\n";
+        cout << "\nWhat would you like to do next, " << player->name << "?\n";
         cout << "1. Battle Wild Pokémon\n";
         cout << "2. Visit PokeCenter\n";
         cout << "3. Challenge Gyms\n";
@@ -88,11 +88,11 @@ namespace N_Main
         N_Utility::Utility::WaitForEnter();
         }
 
-        cout << "Goodbye, " << player.name << "! Thanks for playing!\n";
+        cout << "Goodbye, " << player->name << "! Thanks for playing!\n";
     }
 
-    void Game::VisitPokeCenter(N_Character::N_Player::Player &player) {
-        if (player.chosenPokemon.health == player.chosenPokemon.maxHealth) 
+    void Game::VisitPokeCenter(Player *player) {
+        if (player->chosenPokemon.health == player->chosenPokemon.maxHealth) 
         {
             std::cout << "Your Pokémon is already at full health!\n";
         } 
@@ -102,8 +102,8 @@ namespace N_Main
             std::cout << "Healing your Pokémon...\n";
             N_Utility::Utility::WaitForEnter(); // Simulate a short pause for the
             // healing process
-            player.chosenPokemon.Heal();        // Heal the player's Pokémon
-            std::cout << player.chosenPokemon.name << "'s health is fully restored!\n";
+            player->chosenPokemon.Heal();        // Heal the player's Pokémon
+            std::cout << player->chosenPokemon.name << "'s health is fully restored!\n";
         }
     }
 }

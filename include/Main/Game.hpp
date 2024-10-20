@@ -14,8 +14,8 @@ namespace N_Main
         Grass forestGrass;
     public:
         Game();
-        void GameLoop(Player &player);
-        void VisitPokeCenter(Player &player);
+        void GameLoop(Player *player);
+        void VisitPokeCenter(Player *player);
     };
 
 }

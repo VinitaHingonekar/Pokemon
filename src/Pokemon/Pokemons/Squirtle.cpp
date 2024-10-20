@@ -8,9 +8,13 @@ namespace N_Pokemon {
     
     Squirtle::Squirtle() : Pokemon("Charmander", PokemonType::FIRE, 100, 35) {}
     
-    void Squirtle::WaterSplash(Pokemon &target) {
-      cout << name << " uses Water splash on " << target.name << "!\n";
-      target.TakeDamage(20);
+    void Squirtle::Attack(Pokemon* target){
+      WaterSplash(target);
+    }
+
+    void Squirtle::WaterSplash(Pokemon *target) {
+      cout << name << " uses Water splash on " << target->name << "!\n";
+      target->TakeDamage(20);
     }
   }
 }

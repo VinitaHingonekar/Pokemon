@@ -10,9 +10,13 @@ namespace N_Pokemon{
 
         Charmander::Charmander() : Pokemon ("Caterpie", PokemonType::BUG, 100, 35) {}
 
-        void Charmander::FlameThrower(Pokemon &target){
-            cout << name << " usses Flame Thrower on " << target.name << "!\n"; 
-            target.TakeDamage(35);
+        void Charmander::Attack(Pokemon* target){
+            FlameThrower(target);
+        }
+
+        void Charmander::FlameThrower(Pokemon *target){
+            cout << name << " usses Flame Thrower on " << target->name << "!\n"; 
+            target->TakeDamage(35);
         }
 
     }

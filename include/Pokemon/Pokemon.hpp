@@ -41,7 +41,7 @@ namespace N_Pokemon{
         int GetAttackPower();
         void SetAttackPower(int _attackPower);
 
-        void Attack(Pokemon &target);
+        virtual void Attack(Pokemon *target) = 0;
         void TakeDamage(int damage);
         bool isFainted();
         void Heal();

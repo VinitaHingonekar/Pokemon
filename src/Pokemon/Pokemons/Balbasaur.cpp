@@ -1,5 +1,6 @@
 #include "../../../include/Pokemon/Pokemons/Balbasaur.hpp"
 #include "../../../include/Pokemon/PokemonType.hpp"
+#include "../../../include/Utility/Utility.hpp"
 #include <iostream>
 
 namespace N_Pokemon {
@@ -13,8 +14,19 @@ namespace N_Pokemon {
     }
     
     void Balbasaur::VineWhip(Pokemon *target) {
-      cout << name << " uses vine Whip on " << target->name << "!\n";
-      target->TakeDamage(20);
+            cout << name << "Vines lash out at " << target->name << " with a powerful strike!\n";
+            N_Utility::Utility::WaitForEnter();
+
+            cout << "...\n"; 
+            N_Utility::Utility::WaitForEnter();
+
+            target->TakeDamage(attackPower);
+
+            if (target->isFainted())
+                cout << target->name << " fainted!\n";
+            else
+                cout << target->name << " has " << target->health << " HP left.\n";
+            N_Utility::Utility::WaitForEnter();
     }
   }
 }

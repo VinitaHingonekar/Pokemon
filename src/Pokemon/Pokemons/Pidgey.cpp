@@ -15,7 +15,7 @@ namespace N_Pokemon{
         }
 
         void Pidgey::WingAttack(Pokemon *target){
-            cout << name << " uses Thunder Shock on " << target->name << "!\n"; 
+            cout << name << " uses Wing Attack on " << target->name << "!\n"; 
             target->TakeDamage(35);
         }
 

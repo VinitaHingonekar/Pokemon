@@ -13,10 +13,10 @@ namespace N_Character
         {
         public:
             string name;
-            N_Pokemon::Pokemon chosenPokemon;
+            N_Pokemon::Pokemon *chosenPokemon;
 
             Player();
-            Player(string p_name, N_Pokemon::Pokemon p_chosenPokemon);
+            Player(string p_name);
 
             void ChoosePokemon(int choice);
         };

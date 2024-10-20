@@ -18,16 +18,16 @@ namespace N_Main
     using namespace N_Character::N_Player;
 
     Game::Game() {
-        forestGrass = {"Forest", {Pidgey(), Caterpie(), Zubat()}, 70};
+        forestGrass = {"Forest", {new Pidgey(), new Caterpie(), new Zubat()}, 70};
     }
 
     void Game::GameLoop(Player *player) {
 
         int choice;
         bool keepPlaying = true;
-        BattleManager battleManager;
-        WildEncounterManager encounterManager;
-        N_Pokemon::Pokemon wildPokemon;
+        BattleManager *battleManager = new BattleManager();
+        WildEncounterManager *encounterManager = new WildEncounterManager;
+        N_Pokemon::Pokemon *wildPokemon;
 
         while (keepPlaying) {
         // Clear console before showing options
@@ -48,8 +48,8 @@ namespace N_Main
         // Process the player's choice and display the corresponding message
         switch (choice) {
             case 1: {
-                wildPokemon = encounterManager.GetRandomPokemonFromGrass(forestGrass);
-                battleManager.StartBattle(player, wildPokemon);
+                wildPokemon = encounterManager->GetRandomPokemonFromGrass(forestGrass);
+                battleManager->StartBattle(player, wildPokemon);
                 break;
             }
             case 2: {
@@ -89,10 +89,14 @@ namespace N_Main
         }
 
         cout << "Goodbye, " << player->name << "! Thanks for playing!\n";
+
+        delete(wildPokemon);
+        delete(encounterManager);
+        delete(battleManager);
     }
 
     void Game::VisitPokeCenter(Player *player) {
-        if (player->chosenPokemon.health == player->chosenPokemon.maxHealth) 
+        if (player->chosenPokemon->health == player->chosenPokemon->maxHealth) 
         {
             std::cout << "Your Pokémon is already at full health!\n";
         } 
@@ -102,8 +106,12 @@ namespace N_Main
             std::cout << "Healing your Pokémon...\n";
             N_Utility::Utility::WaitForEnter(); // Simulate a short pause for the
             // healing process
-            player->chosenPokemon.Heal();        // Heal the player's Pokémon
-            std::cout << player->chosenPokemon.name << "'s health is fully restored!\n";
+            player->chosenPokemon->Heal();        // Heal the player's Pokémon
+            std::cout << player->chosenPokemon->name << "'s health is fully restored!\n";
         }
+    }
+
+    Game::~Game(){
+        delete(wildPokemon);
     }
 }

@@ -6,7 +6,7 @@ namespace N_Pokemon {
   namespace N_Pokemons {
     using namespace std;
     
-    Squirtle::Squirtle() : Pokemon("Charmander", PokemonType::FIRE, 100, 35) {}
+    Squirtle::Squirtle() : Pokemon("Squirtle", PokemonType::WATER, 100, 20) {}
     
     void Squirtle::Attack(Pokemon* target){
       WaterSplash(target);

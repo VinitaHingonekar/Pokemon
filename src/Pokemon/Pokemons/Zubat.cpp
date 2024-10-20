@@ -15,7 +15,7 @@ namespace N_Pokemon{
         }
 
         void Zubat::Supersonic(Pokemon *target){
-            cout << name << " uses Thunder Shock on " << target->name << "!\n"; 
+            cout << name << " uses Supersonic on " << target->name << "!\n"; 
             target->TakeDamage(20);
         }
 

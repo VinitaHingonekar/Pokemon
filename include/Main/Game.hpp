@@ -12,8 +12,11 @@ namespace N_Main
     class Game {
     private:
         Grass forestGrass;
+        N_Pokemon::Pokemon *wildPokemon;
+
     public:
         Game();
+        ~Game();
         void GameLoop(Player *player);
         void VisitPokeCenter(Player *player);
     };

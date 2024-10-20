@@ -39,8 +39,8 @@ namespace N_Character{
 
         
         cout << "Professor Oak: Choose wisely...\n";
-        cout << "1. Bulbasaur - The grass type. Calm and collected!\n";
-        cout << "2. Charmander - The fire type. A real hothead!\n";
+        cout << "1. Charmander - The fire type. A real hothead!\n";
+        cout << "2. Bulbasaur - The grass type. Calm and collected!\n";
         cout << "3. Squirtle - The water type. Cool as a cucumber!\n";
 
         int choice;

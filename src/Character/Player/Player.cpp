@@ -2,6 +2,9 @@
 #include "../../../include/Pokemon/PokemonChoice.hpp"
 #include "../../../include/Pokemon/PokemonType.hpp"
 #include "../../../include/Pokemon/Pokemons/Pikachu.hpp"
+#include "../../../include/Pokemon/Pokemons/Charmander.hpp"
+#include "../../../include/Pokemon/Pokemons/Squirtle.hpp"
+#include "../../../include/Pokemon/Pokemons/Balbasaur.hpp"
 #include "../../../include/Utility/Utility.hpp"
 #include <iostream>
 
@@ -19,34 +22,33 @@ namespace N_Character
         Player::Player()
         {
             name = "Trainer";
-            chosenPokemon = N_Pokemon::Pokemon();
+            // chosenPokemon = N_Pokemon::Pokemon();
         }
 
         // Parameterized Constructor
-        Player::Player(string p_name, N_Pokemon::Pokemon p_chosenPokemon)
+        Player::Player(string p_name)
         {
             name = p_name;
-            chosenPokemon = p_chosenPokemon;
         }
 
         void Player::ChoosePokemon(int choice) {
             switch ((PokemonChoice)choice) 
             { 
-                case PokemonChoice::CHARMANDER:
-                    chosenPokemon = N_Pokemon::Pokemon("Charmander", PokemonType::FIRE, 100, 10); 
+                case PokemonChoice::CHARMANDER: 
+                    chosenPokemon = new Charmander(); 
                     break; 
-                case PokemonChoice::BULBASAUR: 
-                    chosenPokemon = N_Pokemon::Pokemon("Bulbasaur", PokemonType::GRASS, 100, 8); 
+                case PokemonChoice::BALBASAUR:
+                    chosenPokemon = new Balbasaur(); 
                     break; 
                 case PokemonChoice::SQUIRTLE: 
-                    chosenPokemon = N_Pokemon::Pokemon("Squirtle", PokemonType::WATER, 100, 9); 
+                    chosenPokemon = new Squirtle(); 
                     break; 
                 default: 
-                    chosenPokemon = N_Pokemon::Pokemon("Pikachu", PokemonType::ELECTRIC, 100, 12); 
+                    chosenPokemon = new Pikachu(); 
                     break; 
             }
 
-            cout << "Player " << name << " chose " << chosenPokemon.name << "!" << endl;
+            cout << "Player " << name << " chose " << chosenPokemon->name << "!" << endl;
             Utility::WaitForEnter();
         }
         

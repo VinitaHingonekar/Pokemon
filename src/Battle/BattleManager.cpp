@@ -11,14 +11,14 @@ namespace N_Battle{
     using namespace std;
     using namespace N_Utility;
     
-    void BattleManager::StartBattle(Player *player, N_Pokemon::Pokemon &wildPokemon)
+    void BattleManager::StartBattle(Player *player, N_Pokemon::Pokemon *wildPokemon)
     {
         battleState.playerPokemon = player->chosenPokemon;
         battleState.wildPokemon = wildPokemon;
         battleState.playerTurn = true;  // Player starts first
         battleState.battleOngoing = true;
 
-        cout << "A wild " << wildPokemon.name << " appeared!\n";
+        cout << "A wild " << wildPokemon->name << " appeared!\n";
         Battle();
     }
 
@@ -29,11 +29,11 @@ namespace N_Battle{
         {
                 if (battleState.playerTurn)
                 {
-                    battleState.playerPokemon.Attack(battleState.wildPokemon);
+                    battleState.playerPokemon->Attack(battleState.wildPokemon);
                 }
                 else
                 {
-                    battleState.wildPokemon.Attack(battleState.playerPokemon);
+                    battleState.wildPokemon->Attack(battleState.playerPokemon);
                 }
 
                 UpdateBattleState();
@@ -49,11 +49,11 @@ namespace N_Battle{
 
     void BattleManager::UpdateBattleState()
     {
-        if (battleState.playerPokemon.isFainted())
+        if (battleState.playerPokemon->isFainted())
         {
             battleState.battleOngoing = false;
         }
-        else if (battleState.wildPokemon.isFainted())
+        else if (battleState.wildPokemon->isFainted())
         {
             battleState.battleOngoing = false;
         }
@@ -61,13 +61,13 @@ namespace N_Battle{
 
     void BattleManager::HandleBattleOutcome()
     {
-        if(battleState.wildPokemon.isFainted())
+        if(battleState.wildPokemon->isFainted())
         {
-            cout << "You defeated the wild " << battleState.wildPokemon.name << endl;
+            cout << "You defeated the wild " << battleState.wildPokemon->name << endl;
         }
         else
         {
-            cout << battleState.playerPokemon.name << " has fainted! You need to visit the PokeCenter." << endl;
+            cout << battleState.playerPokemon->name << " has fainted! You need to visit the PokeCenter." << endl;
         }
     }
 

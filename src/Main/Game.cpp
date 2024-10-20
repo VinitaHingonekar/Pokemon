@@ -92,17 +92,18 @@ namespace N_Main
     }
 
     void Game::VisitPokeCenter(N_Character::N_Player::Player &player) {
-    if (player.chosenPokemon.health == player.chosenPokemon.maxHealth) 
-    {
-        std::cout << "Your Pokémon is already at full health!\n";
-    } 
-    else 
-    {
-        std::cout << "You head to the PokeCenter.\n";
-        std::cout << "Healing your Pokémon...\n";
-        N_Utility::Utility::WaitForEnter(); // Simulate a short pause for the
-        // healing process
-        player.chosenPokemon.Heal();        // Heal the player's Pokémon
-        std::cout << player.chosenPokemon.name << "'s health is fully restored!\n";
+        if (player.chosenPokemon.health == player.chosenPokemon.maxHealth) 
+        {
+            std::cout << "Your Pokémon is already at full health!\n";
+        } 
+        else 
+        {
+            std::cout << "You head to the PokeCenter.\n";
+            std::cout << "Healing your Pokémon...\n";
+            N_Utility::Utility::WaitForEnter(); // Simulate a short pause for the
+            // healing process
+            player.chosenPokemon.Heal();        // Heal the player's Pokémon
+            std::cout << player.chosenPokemon.name << "'s health is fully restored!\n";
+        }
     }
 }

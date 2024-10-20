@@ -3,18 +3,25 @@
 #include "include/Character/ProfessorOak.hpp"
 #include <iostream>
 
-int main() 
+using namespace N_Character;
+using namespace N_Player;
+
+int main()
 {
-    N_Character::ProfessorOak professor("Professor Oak");
-    N_Character::N_Player::Player player;
+    N_Character::ProfessorOak *professor = new N_Character::ProfessorOak("Professor Oak");
+    N_Player::Player *player = new N_Player::Player;
 
-    professor.GreetPlayer(player);
-    professor.OfferPokemonChoices(player);
+    professor->GreetPlayer(*player);
+    professor->OfferPokemonChoices(*player);
 
-    professor.ExplainMainQuest(player);
+    professor->ExplainMainQuest(*player);
 
-    N_Main::Game game;
-    game.GameLoop(player);
+    N_Main::Game *game = new N_Main::Game;
+    game->GameLoop(*player);
+
+    delete(professor);
+    delete(player);
+    delete(game);
 
     return 0;
 }

@@ -11,7 +11,7 @@ namespace N_Pokemon{
         Caterpie::Caterpie() : Pokemon ("Caterpie", PokemonType::BUG, 100, 35) {}
 
         void Caterpie::BugBite(Pokemon &target){
-            cout << name << " uses Thunder Shock on " << target.name << "!\n"; 
+            cout << name << " uses BugBite on " << target.name << "!\n"; 
             target.TakeDamage(35);
         }
 

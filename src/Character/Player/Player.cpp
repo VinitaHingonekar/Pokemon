@@ -1,9 +1,8 @@
-#pragma once
-#include "../../include/Character/Player/Player.hpp"
-#include "../../include/Pokemon/PokemonChoice.hpp"
-#include "../../include/Pokemon/PokemonType.hpp"
+#include "../../../include/Character/Player/Player.hpp"
+#include "../../../include/Pokemon/PokemonChoice.hpp"
+#include "../../../include/Pokemon/PokemonType.hpp"
 #include "../../../include/Pokemon/Pokemons/Pikachu.hpp"
-#include "../../include/Utility/Utility.hpp"
+#include "../../../include/Utility/Utility.hpp"
 #include <iostream>
 
 class Pokemon;

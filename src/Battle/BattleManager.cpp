@@ -29,11 +29,11 @@ namespace N_Battle{
         {
                 if (battleState.playerTurn)
                 {
-                    battleState.playerPokemon->Attack(battleState.wildPokemon);
+                    battleState.playerPokemon->SelectAndUseMove(battleState.wildPokemon);
                 }
                 else
                 {
-                    battleState.wildPokemon->Attack(battleState.playerPokemon);
+                    battleState.wildPokemon->SelectAndUseMove(battleState.wildPokemon);
                 }
 
                 UpdateBattleState();
@@ -45,6 +45,11 @@ namespace N_Battle{
         }
 
         HandleBattleOutcome();
+    }
+
+    void BattleManager::StopBattle()
+    {
+        
     }
 
     void BattleManager::UpdateBattleState()

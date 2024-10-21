@@ -2,12 +2,16 @@
 #include <string>
 #include <vector>
 #include "../../include/Pokemon/Move.hpp"
+#include "../../include/Pokemon/StatusEffects/IStatusEffect.hpp"
+#include "../../include/Pokemon/StatusEffects/StatusEffectType.hpp"
+// using namespace std;
 using namespace std;
-
+using namespace N_Pokemon::N_StatusEffects;
 
 namespace N_Pokemon{
     enum class PokemonType;
     struct Move;
+    // using namespace N_Pokemon::N_StatusEffects;
 
     class Pokemon
     {
@@ -17,6 +21,7 @@ namespace N_Pokemon{
         int health;
         int maxHealth;
         vector<Move> moves;
+        N_Pokemon::N_StatusEffects::IStatusEffect* appliedEffect;
 
         Pokemon();
         Pokemon(string p_name, PokemonType p_type, int p_health, vector<Move> moves);
@@ -29,6 +34,13 @@ namespace N_Pokemon{
         void TakeDamage(int damage);
         void SelectAndUseMove(Pokemon *target);
         void ReduceAttackPower(int reducedDamage);
+
+        N_Pokemon::N_StatusEffects::IStatusEffect* appliedEffect;
+        
+        bool CanAttack();
+        bool CanApplyEffect();
+        void ApplyEffect(StatusEffectType effectToApply);
+        void ClearEffect();
 
     protected:
         void PrintAvailableMoves();

@@ -15,7 +15,6 @@ namespace N_Pokemon {
         type = PokemonType::NORMAL;
         health = 50;
         maxHealth = 50;
-        attackPower = 10;
     }
 
     // Parameterized Constructor
@@ -26,17 +25,16 @@ namespace N_Pokemon {
         health = p_health;
         maxHealth = p_health;
         moves = p_moves;
-        // attackPower = p_attackPower;
     }
 
     // Copy Constructor 
-    Pokemon::Pokemon(const Pokemon &other)
+    Pokemon::Pokemon(const Pokemon *other)
     {
-        name = other.name;
-        type = other.type;
-        health = other.health;
-        maxHealth = other.maxHealth;
-        attackPower = other.attackPower;
+        name = other->name;
+        type = other->type;
+        health = other->health;
+        maxHealth = other->maxHealth;
+        moves = other->moves;
     }
 
     // Destructor
@@ -54,6 +52,26 @@ namespace N_Pokemon {
         }
     }
 
+    void Pokemon::SelectAndUseMove(Pokemon* target)
+    {
+        PrintAvailableMoves();
+
+        int choice = SelectMove();
+        Move selectedMove = moves[choice-1];
+        
+        UseMove(selectedMove, target);
+    }
+
+    void Pokemon::ReduceAttackPower(int reducedDamage)
+    {
+        for (size_t i = 0; i < moves.size(); ++i)
+        {
+            moves[i].power -= reducedDamage;
+            if(moves[i].power < 0)
+                moves[i].power = 0;
+        }
+    }
+
     bool Pokemon::isFainted()
     {
         return health <= 0;
@@ -64,13 +82,9 @@ namespace N_Pokemon {
         health = maxHealth;
     }
 
-    void Pokemon::SelectAndUseMove(Pokemon* target){
-        PrintAvailableMoves();
-
-        int choice = SelectMove();
-        Move selectedMove = moves[choice-1];
-        
-        UseMove(selectedMove, target);
+    void Pokemon::Attack(Move selectedMove, Pokemon* target) 
+    { 
+        target->TakeDamage(selectedMove.power); 
     }
 
     void Pokemon::PrintAvailableMoves(){
@@ -110,10 +124,5 @@ namespace N_Pokemon {
         cout << target->name << " fainted!\n";
         else
         cout << target->name << " has " << target->health << " HP left.\n";
-    }
-
-    void ReduceAttackPower(int reducedDamage)
-    {
-        
     }
 }

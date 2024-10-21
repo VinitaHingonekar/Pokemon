@@ -10,12 +10,15 @@ namespace N_Pokemon{
         
         using namespace std;
 
-        Pikachu::Pikachu() : Pokemon ("Pikachu", PokemonType::ELECTRIC, 100, {Move("THUNDER SHOCK", 25), {Move("SUPERSONIC", 80)}}) {}
+        Pikachu::Pikachu() 
+            : Pokemon ("Pikachu", PokemonType::ELECTRIC, 100, {
+                Move("THUNDER SHOCK", 25), 
+                Move("QUICK ATTACK", 10),
+                Move("THUNDERBOLT", 80)}
+            ) {}
 
         void Pikachu::Attack(Move selectedMove, Pokemon* target)
         {
-            // target->TakeDamage(selectedMove.power);
-
             if(selectedMove.name == "THUNDER BOLT")
             {
                 if (rand() % 100 < 20)
@@ -31,12 +34,5 @@ namespace N_Pokemon{
             else
                 Pokemon::Attack(selectedMove, target);
         }
-
-        // void Pikachu::ThunderShock(Pokemon *target){
-        //     cout << name << " uses Thunder Shock on " << target->name << "!\n"; 
-        //     target->TakeDamage(20);
-        // }
-
     }
-
 }

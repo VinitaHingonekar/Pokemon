@@ -15,7 +15,7 @@ namespace N_Battle{
         void static StopBattle();
 
     private:
-        BattleState battleState;
+        static BattleState battleState;
 
         void Battle();
         void HandleBattleOutcome();

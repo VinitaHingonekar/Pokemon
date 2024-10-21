@@ -8,7 +8,7 @@ namespace N_Battle {
     using namespace N_Pokemon;
 
     WildEncounterManager::WildEncounterManager() {
-        srand(time(0)); // Seed the random number generator
+        srand(time(0));
     }
 
     Pokemon *WildEncounterManager::GetRandomPokemonFromGrass(const Grass &grass)

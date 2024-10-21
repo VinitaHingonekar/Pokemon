@@ -2,20 +2,19 @@
 #include "../../include/Character/Player/Player.hpp"
 #include "../../include/Utility/Utility.hpp"
 #include <iostream>
-// #include "../../include/Pokemon/Pokemon.hpp"
-
-// using namespace N_Pokemon;
-class Pokemon;
 
 namespace N_Battle{
     using namespace std;
     using namespace N_Utility;
+    using namespace N_Pokemon;
+
+    BattleState BattleManager::battleState;
     
     void BattleManager::StartBattle(Player *player, N_Pokemon::Pokemon *wildPokemon)
     {
         battleState.playerPokemon = player->chosenPokemon;
         battleState.wildPokemon = wildPokemon;
-        battleState.playerTurn = true;  // Player starts first
+        battleState.playerTurn = true;
         battleState.battleOngoing = true;
 
         cout << "A wild " << wildPokemon->name << " appeared!\n";
@@ -49,7 +48,7 @@ namespace N_Battle{
 
     void BattleManager::StopBattle()
     {
-        
+        battleState.battleOngoing = false;
     }
 
     void BattleManager::UpdateBattleState()

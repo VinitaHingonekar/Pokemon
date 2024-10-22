@@ -16,7 +16,6 @@ namespace N_Pokemon {
         type = PokemonType::NORMAL;
         health = 50;
         maxHealth = 50;
-        appliedEffect = nullptr;
     }
 
     // Parameterized Constructor
@@ -38,13 +37,6 @@ namespace N_Pokemon {
         health = other->health;
         maxHealth = other->maxHealth;
         moves = other->moves;
-        appliedEffect = nullptr;
-    }
-
-    // Destructor
-    Pokemon::~Pokemon() 
-    {
-
     }
 
     void Pokemon::TakeDamage(int damage)
@@ -135,7 +127,7 @@ namespace N_Pokemon {
         if (appliedEffect == nullptr)
             return true;
         else
-            appliedEffect->TurnEndEffect(this);
+            return appliedEffect->TurnEndEffect(this);
     }
 
     bool Pokemon::CanApplyEffect()
@@ -148,9 +140,9 @@ namespace N_Pokemon {
         switch (effectToApply)
         {
             case StatusEffectType::PARALYZED:
-            appliedEffect = new ParalyzedEffect();
-            appliedEffect->ApplyEffect(this);
-            break;
+                appliedEffect = new ParalyzedEffect();
+                appliedEffect->ApplyEffect(this);
+                break;
             default:
             appliedEffect = nullptr;
         }
@@ -160,6 +152,5 @@ namespace N_Pokemon {
     { 
         appliedEffect = nullptr; 
     }
-
 
 }

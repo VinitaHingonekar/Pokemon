@@ -31,16 +31,14 @@ namespace N_Pokemon{
                     std::cout << "... but it missed!\n";
                 }
             }
-            else if(selectedMove.name == "THUNDER SHOCK")
-            {
-
-                if(target->CanApplyEffect())
-
-                    target->ApplyEffect(StatusEffectType::PARALYZED);
-
-            }
             else
                 Pokemon::Attack(selectedMove, target);
+
+            if(selectedMove.name == "THUNDER SHOCK")
+            {
+                if(target->CanApplyEffect())
+                    target->ApplyEffect(StatusEffectType::PARALYZED);
+            }
         }
     }
 }

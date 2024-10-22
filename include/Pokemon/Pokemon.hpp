@@ -26,7 +26,6 @@ namespace N_Pokemon{
         Pokemon();
         Pokemon(string p_name, PokemonType p_type, int p_health, vector<Move> moves);
         Pokemon(const Pokemon *other);
-        ~Pokemon();
 
         bool isFainted();
         void Heal();
@@ -34,8 +33,6 @@ namespace N_Pokemon{
         void TakeDamage(int damage);
         void SelectAndUseMove(Pokemon *target);
         void ReduceAttackPower(int reducedDamage);
-
-        N_Pokemon::N_StatusEffects::IStatusEffect* appliedEffect;
         
         bool CanAttack();
         bool CanApplyEffect();

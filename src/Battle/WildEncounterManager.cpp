@@ -5,17 +5,17 @@
 #include <ctime>
 
 namespace N_Battle {
-    using namespace N_Pokemon;
+    // using namespace N_Pokemon;
 
     WildEncounterManager::WildEncounterManager() {
         srand(time(0));
     }
 
-    Pokemon *WildEncounterManager::GetRandomPokemonFromGrass(const Grass &grass)
+    N_Pokemon::Pokemon *WildEncounterManager::GetRandomPokemonFromGrass(const Grass &grass)
     {
         int randomIndex = rand() % grass.wildPokemonList.size();
 
-        Pokemon* wildPokemon = grass.wildPokemonList[randomIndex];
+        N_Pokemon::Pokemon* wildPokemon = grass.wildPokemonList[randomIndex];
 
         return wildPokemon;
     }

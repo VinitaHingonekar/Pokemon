@@ -7,7 +7,16 @@ namespace N_Pokemon
 {
     namespace N_StatusEffects
     {
-        void ParalyzedEffect::ApplyEffect(Pokemon* target)
+        // ParalyzedEffect::ParalyzedEffect() 
+        // : turnsLeft(0) // Initialize turnsLeft
+        // {
+        // }
+
+        // ParalyzedEffect::~ParalyzedEffect() 
+        // {
+        // }
+
+        void ParalyzedEffect::ApplyEffect(N_Pokemon::Pokemon* target)
         {
             std::cout << target->name << " is paralyzed! It may not be able to move!\n";
             turnsLeft = (rand() % 3 ) + 1;
@@ -18,7 +27,7 @@ namespace N_Pokemon
             return "Paralyzed";
         }
 
-        bool ParalyzedEffect::TurnEndEffect(Pokemon* target)
+        bool ParalyzedEffect::TurnEndEffect(N_Pokemon::Pokemon* target)
         {
             if(turnsLeft <= 0)
             {
@@ -39,10 +48,10 @@ namespace N_Pokemon
             return true;
         }
 
-        void ParalyzedEffect::ClearEffect(Pokemon* target)
+        void ParalyzedEffect::ClearEffect(N_Pokemon::Pokemon* target)
         {
             std::cout << target->name << " is no longer paralyzed!\n";
-            // target->ClearEffect();
+            target->ClearEffect();
         }
     }
 }

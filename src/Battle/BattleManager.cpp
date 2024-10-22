@@ -32,7 +32,7 @@ namespace N_Battle{
                 }
                 else
                 {
-                    battleState.wildPokemon->SelectAndUseMove(battleState.wildPokemon);
+                    battleState.wildPokemon->SelectAndUseMove(battleState.playerPokemon);
                 }
 
                 UpdateBattleState();
